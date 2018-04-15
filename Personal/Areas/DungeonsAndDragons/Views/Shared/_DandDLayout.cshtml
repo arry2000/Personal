@@ -4,14 +4,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Arry's MVC Stuff</title>
-    <link rel="icon" href="@Url.Content("~/favicon.ico")" />
+    <link rel="icon" href="@Url.Content("~/favicon_DandD.ico")" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link rel="stylesheet" href="~/Content/fontawesome/css/fontawesome-all.min.css" />
 </head>
 <body>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark body-content">
-        @Html.ActionLink("Arne Vanderstraeten", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        @Html.ActionLink("Dungeons & Dragons For Noobs", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -19,13 +19,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item @( ViewBag.Active == "Home" ? "active" : "" ) ">
-                    @Html.ActionLink("Home", "Index", "Home",null, new { @class="nav-link"})
+                    @Html.ActionLink("Home", "Index", "DandD",null, new { @class="nav-link"})
                 </li>
-                <li class="nav-item @( ViewBag.Active == "About" ? "active" : "" )">
-                    @Html.ActionLink("About", "About", "Home",null, new { @class = "nav-link" })
-                </li>
-                <li class="nav-item @( ViewBag.Active == "Contact" ? "active" : "" )">
-                    @Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })
+                <li class="nav-item @( ViewBag.Active == "WorldMap" ? "active" : "" )">
+                    @Html.ActionLink("Worldmap", "WorldMap", "DandD",null, new { @class = "nav-link" })
                 </li>
             </ul>
             @Html.Partial("_LoginPartial")
@@ -39,7 +36,7 @@
 
     <nav class="navbar fixed-bottom navbar-expand-md navbar-dark bg-dark">
         <span class="navbar-text mx-auto">
-            &copy; @DateTime.Now.Year - Arne Vanderstraeten &copy;
+            &copy; @DateTime.Now.Year - D&amp;D For Noobs
         </span>
     </nav>
 

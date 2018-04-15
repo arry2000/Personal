@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "WorldMap";
+    ViewBag.Active = "WorldMap";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h2>Caldania World Map</h2>
+        <hr/>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-9">
+        
+        <div id="ajaxMapTarget">
+            @Html.Action("GetMaps", new { region="WORLD"})
+        </div>
+
+    </div>
+
+    <div class="col-3">
+
+        <div class="list-group">
+            @Ajax.ActionLink("World", "GetMaps", new { region = "WORLD" }, new AjaxOptions()
+            {
+                UpdateTargetId = "ajaxMapTarget"
+            }, new { @class = "list-group-item list-group-item-action active", onclick = "listGroupItemClick(this)" })
+
+            @Ajax.ActionLink("Iona","GetMaps",new { region = "IONA"},new AjaxOptions()
+            {
+                UpdateTargetId = "ajaxMapTarget"
+            }, new { @class= "list-group-item list-group-item-action", onclick="listGroupItemClick(this)" })
+
+            @Ajax.ActionLink("Ciendor", "GetMaps", new { region = "CIENDOR" }, new AjaxOptions()
+            {
+                UpdateTargetId = "ajaxMapTarget"
+            }, new { @class = "list-group-item list-group-item-action", onclick = "listGroupItemClick(this)" })
+
+            @Ajax.ActionLink("Brusland Mountains", "GetMaps", new { region = "BRUSLAND MOUNTAINS" }, new AjaxOptions()
+            {
+                UpdateTargetId = "ajaxMapTarget"
+            }, new { @class = "list-group-item list-group-item-action", onclick = "listGroupItemClick(this)" })
+        </div>
+
+    </div>
+</div>
+
+@section scripts {    
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script>
+
+        function listGroupItemClick(target)
+        {
+            $('.list-group-item').removeClass('active');
+            $(target).addClass('active');
+        }
+
+    </script>
+}
