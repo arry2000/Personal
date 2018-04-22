@@ -22,7 +22,7 @@ namespace Personal.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.GoogleMapsAPIKey = "AIzaSyBDc6EmF7AC5XGMlHUZtEGg2XcopwdODwM";
 
             return View();
         }
