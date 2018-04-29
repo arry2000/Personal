@@ -176,6 +176,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Code\CustomHtmlHelpers.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -206,6 +207,7 @@
     <Content Include="Content\fontawesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\images\av.png" />
     <Content Include="Content\images\DandDLogo.png" />
+    <Content Include="Content\images\intro-bg.jpg" />
     <Content Include="Content\images\map-marker.png" />
     <Content Include="Content\images\maps\Brusland_Mountains_Cities.jpg" />
     <Content Include="Content\images\maps\Brusland_Mountains_Landscape.jpg" />
