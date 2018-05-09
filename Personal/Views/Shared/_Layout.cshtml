@@ -5,47 +5,61 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="My personal website">
+    <meta name="author" content="Arne Vanderstraeten">
     <title>@ViewBag.Title - Arry's MVC Stuff</title>
     <link rel="icon" href="@Url.Content("~/favicon.ico")" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <link rel="stylesheet" href="~/Content/fontawesome/css/font-awesome.min.css" />
 </head>
-<body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark body-content">
-        @Html.ActionLinkWithFontAwesomeIcon("Arne Vanderstraeten", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" }, "fa-play-circle")
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item @( ViewBag.Active == "Home" ? "active" : "" ) ">
-                    @Html.ActionLink("Home", "Index", "Home",null, new { @class="nav-link"})
-                </li>
-                <li class="nav-item @( ViewBag.Active == "About" ? "active" : "" )">
-                    @Html.ActionLink("About", "About", "Home",null, new { @class = "nav-link" })
-                </li>
-                <li class="nav-item @( ViewBag.Active == "Contact" ? "active" : "" )">
-                    @Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })
-                </li>
-            </ul>
-            @*@Html.Partial("_LoginPartial")*@
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i> <span class="light">Arne</span> Vanderstraeten
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about2">About <small><i>cont.</i></small></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
+        <!-- /.container -->
     </nav>
 
-    <div class="container-fluid body-content">
+    <div>
         @RenderBody()
-
     </div>
 
-    <nav class="navbar fixed-bottom navbar-expand-md navbar-dark bg-dark">
-        <span class="navbar-text mx-auto">
-            &copy; @DateTime.Now.Year - Arne Vanderstraeten &copy;
-        </span>
-    </nav>
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; Arne Vanderstraeten - @DateTime.Now.Year</p>
+        </div>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryEasing")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>

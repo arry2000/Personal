@@ -11,6 +11,9 @@ namespace Personal
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/jqueryEasing").Include(
+                        "~/Scripts/jquery.easing.1.3.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
@@ -20,12 +23,18 @@ namespace Personal
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/bootstrap.min.js",
+                      "~/Scripts/respond.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap.min.css",
+                      "~/Content/fontawesome/css/font-awesome.min.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/DandDcss").Include(
+                      "~/Content/bootstrap.min.css",
+                      "~/Content/fontawesome/css/font-awesome.min.css",
+                      "~/Content/DandDSite.css"));
         }
     }
 }

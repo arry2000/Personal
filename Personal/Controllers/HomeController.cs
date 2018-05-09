@@ -10,19 +10,13 @@ namespace Personal.Controllers
     {
         public ActionResult Index()
         {
-            return View();
-        }
+            DateTime now = DateTime.Today;
+            DateTime bday = new DateTime(1995, 4, 29);
+            int age = now.Year - bday.Year;
+            if (now < bday.AddYears(age)) age--;
+            ViewBag.Age = age;
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.GoogleMapsAPIKey = "AIzaSyBDc6EmF7AC5XGMlHUZtEGg2XcopwdODwM";
+            ViewBag.GoogleMapsApiKey = "AIzaSyBDc6EmF7AC5XGMlHUZtEGg2XcopwdODwM";
 
             return View();
         }
