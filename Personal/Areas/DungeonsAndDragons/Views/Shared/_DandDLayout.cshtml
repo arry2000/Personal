@@ -7,11 +7,10 @@
     <link rel="icon" href="@Url.Content("~/favicon_DandD.ico")" />
     @Styles.Render("~/Content/DandDcss")
     @Scripts.Render("~/bundles/modernizr")
-    <link rel="stylesheet" href="~/Content/fontawesome/css/fontawesome-all.min.css" />
 </head>
 <body>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark body-content">
-        @Html.ActionLink("Dungeons & Dragons For Noobs", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        @Html.ActionLink("Dungeons & Dragons For Noobs", "Index", "DandD", new { area = "DungeonsAndDragons" }, new { @class = "navbar-brand" })
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
