@@ -8,17 +8,35 @@ namespace Personal.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ViewResult Index()
+        {
+            string GoogleMapsApiKey = "AIzaSyBDc6EmF7AC5XGMlHUZtEGg2XcopwdODwM";
+            return View(model: GoogleMapsApiKey);
+        }
+
+        [ChildActionOnly]
+        public PartialViewResult Professional()
         {
             DateTime now = DateTime.Today;
             DateTime bday = new DateTime(1995, 4, 29);
+
             int age = now.Year - bday.Year;
             if (now < bday.AddYears(age)) age--;
             ViewBag.Age = age;
 
-            ViewBag.GoogleMapsApiKey = "AIzaSyBDc6EmF7AC5XGMlHUZtEGg2XcopwdODwM";
+            return PartialView("_Professional", age);
+        }
 
-            return View();
+        [ChildActionOnly]
+        public PartialViewResult Personal()
+        {
+            return PartialView("_Personal");
+        }
+
+        [ChildActionOnly]
+        public PartialViewResult Contact()
+        {
+            return PartialView("_Contact");
         }
     }
 }
