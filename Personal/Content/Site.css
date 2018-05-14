@@ -99,6 +99,7 @@ a:focus {
 }
 .navbar-custom .navbar-brand {
   font-weight: 700;
+  font-size: 1.1rem;
 }
 .navbar-custom .navbar-brand:focus {
   outline: none;

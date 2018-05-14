@@ -259,6 +259,7 @@
     <Content Include="Content\fontawesome\fonts\FontAwesome.otf" />
     <Content Include="Content\files\CV-Arne.pdf" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <None Include="Properties\PublishProfiles\SmarterASP_FTP.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
