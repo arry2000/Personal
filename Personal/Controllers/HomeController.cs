@@ -38,5 +38,12 @@ namespace Personal.Controllers
         {
             return PartialView("_Contact");
         }
+
+
+        public ViewResult HappyBirthday(string name)
+        {
+            ViewBag.HideNav = true;
+            return View(model: name);
+        }
     }
 }

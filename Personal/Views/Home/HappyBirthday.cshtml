@@ -1,0 +1,90 @@
+﻿
+@model string
+
+@{
+    ViewBag.Title = "HappyBirthday";
+}
+
+<section class="container content-section">
+
+    
+
+
+    @if (Model != null && Model.ToLower().Equals("joyce"))
+    {
+        <div class="row">
+            <div class="col-12">
+                <h1>Hey @Model, have a happy birthday !!!</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <img style="width:100%; height:100%" src="~/Content/images/birthday.png" />
+            </div>
+            <div class="col-4">
+                <img style="width:100%; height:100%" src="~/Content/images/birthdayVodka.jpg" />
+            </div>
+            <div class="col-4">
+                <img style="width:100%; height:100%" src="~/Content/images/birthdayWine.jpg" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <hr />
+                <h4>Enjoy your day/week of celebration. I wish you the best of luck. We'll drink on it another time :)</h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <p>
+                    P.S.: Still waiting for you to come and clean/wash my car :p
+                    <br />
+                    Just kidding, it's fine
+                </p>
+            </div>
+        </div>
+    }
+    else if(Model != null && Model.ToLower().Equals("emma"))
+    {
+        <div class="row">
+            <div class="col-12">
+                <h1>Hey @Model, have a happy birthday !!!</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <img style="width:100%; height:100%" src="~/Content/images/birthdayNoReminder.png" />
+            </div>
+            <div class="col-8">
+                <h5>Here's our Groezie back from 2016</h5>
+                <img class="img-fluid" src="~/Content/images/Groezie 2016.jpg" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <hr />
+                <h4>I wish you the best of luck. Enjoy your day/week of celebration!</h4>
+                <h5>BTW: we still got a lot of movies to watch...</h5>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <p>
+                    P.S.: Unfortunately, we're not going to Efteling this time ... maybe when we actually have some free time :p
+                </p>
+            </div>
+        </div>
+    }
+    else
+    {
+        <h1>Happy birthday @Model</h1>
+        <h2>No special content for you on this page, unfortunately :p</h2>
+    }
+
+</section>

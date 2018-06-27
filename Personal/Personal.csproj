@@ -200,8 +200,13 @@
     <Content Include="Content\fontawesome\css\font-awesome.min.css" />
     <Content Include="Content\fontawesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\images\av.png" />
+    <Content Include="Content\images\birthday.png" />
+    <Content Include="Content\images\birthdayNoReminder.png" />
+    <Content Include="Content\images\birthdayVodka.jpg" />
+    <Content Include="Content\images\birthdayWine.jpg" />
     <Content Include="Content\images\DandDLogo.png" />
     <Content Include="Content\images\downloads-bg.jpg" />
+    <Content Include="Content\images\Groezie 2016.jpg" />
     <Content Include="Content\images\intro-bg.jpg" />
     <Content Include="Content\images\map-marker.png" />
     <Content Include="Content\images\maps\Brusland_Mountains_Cities.jpg" />
@@ -333,6 +338,7 @@
     <Content Include="Views\Home\_Professional.cshtml" />
     <Content Include="Views\Home\_Personal.cshtml" />
     <Content Include="Views\Home\_Contact.cshtml" />
+    <Content Include="Views\Home\HappyBirthday.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

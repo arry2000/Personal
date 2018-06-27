@@ -12,38 +12,44 @@
         @Scripts.Render("~/bundles/modernizr")
     </head>
     <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-md navbar-custom fixed-top" role="navigation" id="fadingNavbar">
-            <div class="container">
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    <span class="navbar-toggler-icon fa fa-bars"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-play-circle"></i> <span class="light">Arne</span> Vanderstraeten
-                </a>
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse navbar-main-collapse">
-                    <ul class="nav navbar-nav ml-auto">
-                        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                        <li class="hidden">
-                            <a href="#page-top" class="nav-link"></a>
-                        </li>
-                        <li>
-                            <a class="page-scroll nav-link" href="#professional">Professional</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll nav-link" href="#personal">Personal</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll nav-link" href="#contact">Contact</a>
-                        </li>
-                    </ul>
+        @if (ViewBag.HideNav == null || ViewBag.HideNav == false)
+        {
+            <!-- Navigation -->
+            <nav class="navbar navbar-expand-md navbar-custom fixed-top" role="navigation" id="fadingNavbar">
+                <div class="container">
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-main-collapse">
+                        <span class="navbar-toggler-icon fa fa-bars"></span>
+                    </button>
+                    <a class="navbar-brand page-scroll" href="#page-top">
+                        <i class="fa fa-play-circle"></i> <span class="light">Arne</span> Vanderstraeten
+                    </a>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-main-collapse">
+                        <ul class="nav navbar-nav ml-auto">
+                            <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                            <li class="hidden">
+                                <a href="#page-top" class="nav-link"></a>
+                            </li>
+                            <li>
+                                <a class="page-scroll nav-link" href="#professional">Professional</a>
+                            </li>
+                            <li>
+                                <a class="page-scroll nav-link" href="#personal">Personal</a>
+                            </li>
+                            <li>
+                                <a class="page-scroll nav-link" href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
                 </div>
-                <!-- /.navbar-collapse -->
-            </div>
-        </nav>
+            </nav>
 
+        }
+
+        
         @RenderBody()
 
         <footer>
