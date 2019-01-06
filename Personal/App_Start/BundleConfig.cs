@@ -28,12 +28,12 @@ namespace Personal
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.min.css",
-                      "~/Content/fontawesome/css/font-awesome.min.css",
+                      "~/Content/fontawesome/css/all.min.css",
                       "~/Content/site.css"));
 
             bundles.Add(new StyleBundle("~/Content/DandDcss").Include(
                       "~/Content/bootstrap.min.css",
-                      "~/Content/fontawesome/css/font-awesome.min.css",
+                      "~/Content/fontawesome/css/all.min.css",
                       "~/Content/DandDSite.css"));
         }
     }
