@@ -12,51 +12,31 @@
 </div>
 
 <div class="row">
-    
-    <div class="col-md-3">
 
-        <div class="list-group">
-            @Ajax.ActionLink("World", "GetMaps", new { region = "WORLD" }, new AjaxOptions()
-            {
-                UpdateTargetId = "ajaxMapTarget"
-            }, new { @class = "list-group-item list-group-item-action active", onclick = "listGroupItemClick(this)" })
+    <div class="col-12">
 
-            @Ajax.ActionLink("Iona","GetMaps",new { region = "IONA"},new AjaxOptions()
-            {
-                UpdateTargetId = "ajaxMapTarget"
-            }, new { @class= "list-group-item list-group-item-action", onclick="listGroupItemClick(this)" })
+        <img src="~/Content/images/maps/CaldanieWorldMap.jpg" usemap="#image-map" class="img-fluid" id="worldmap">
 
-            @Ajax.ActionLink("Ciendor", "GetMaps", new { region = "CIENDOR" }, new AjaxOptions()
-            {
-                UpdateTargetId = "ajaxMapTarget"
-            }, new { @class = "list-group-item list-group-item-action", onclick = "listGroupItemClick(this)" })
-
-            @Ajax.ActionLink("Brusland Mountains", "GetMaps", new { region = "BRUSLAND MOUNTAINS" }, new AjaxOptions()
-            {
-                UpdateTargetId = "ajaxMapTarget"
-            }, new { @class = "list-group-item list-group-item-action", onclick = "listGroupItemClick(this)" })
-        </div>
+        <map name="image-map">
+            <area alt="Iona" title="Iona" href="@Url.Action("GetMap","DandD",new { region = "IONA" })" coords="393,694,323,640,318,611,368,503,339,429,290,385,294,351,346,326,337,280,399,246,460,259,491,215,527,204,611,195,650,248,670,306,690,418,710,519,710,553,708,571" shape="poly">
+            <area alt="Brusland mountain" title="Brusland mountain" href="@Url.Action("GetMap","DandD",new { region = "BRUSLAND MOUNTAINS" })" coords="612,199,705,118,804,136,947,101,1132,324,1159,517,1191,571,911,566,717,570,696,407,670,295" shape="poly">
+            <area alt="Ciendor" title="Ciendor" href="@Url.Action("GetMap","DandD",new { region = "CIENDOR" })" coords="1197,573,1597,575,1577,517,1606,459,1589,432,1483,398,1430,354,1452,275,1564,172,1571,85,1421,83,1408,71,1226,141,1090,119,954,105,1092,291,1132,324,1152,463,1171,535" shape="poly">
+            <area alt="Barren Wildlands" title="Barren Wildlands" href="@Url.Action("GetMap","DandD",new { region = "BARREN WILDLANDS" })" coords="667,139,679,96,721,69,750,4,1150,4,1152,33,1115,81,1090,90,1099,116,956,96,801,134,714,114" shape="poly">
+            <area alt="Amdrin" title="Amdrin" href="@Url.Action("GetMap","DandD",new { region = "AMDRIN" })" coords="399,694,437,747,321,960,408,1009,484,1087,611,1029,658,1000,755,991,864,957,965,957,1076,930,873,570,714,564,567,624" shape="poly">
+        </map>
 
     </div>
 
-    <div class="col-md-9">
-
-        <div id="ajaxMapTarget">
-            @Html.Action("GetMaps", new { region = "WORLD" })
-        </div>
-
-    </div>
 </div>
 
 @section scripts {    
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/imageMapResizer.min.js"></script>
+    <script src="~/Scripts/jquery.maphilight.min.js"></script>
     <script>
-
-        function listGroupItemClick(target)
-        {
-            $('.list-group-item').removeClass('active');
-            $(target).addClass('active');
-        }
-
+        $(document).ready( function () {
+            $('map').imageMapResize();
+            $('#worldmap').maphilight();
+        });
     </script>
 }

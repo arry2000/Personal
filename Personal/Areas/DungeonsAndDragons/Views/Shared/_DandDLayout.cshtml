@@ -44,6 +44,15 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    <script>
+
+        function listGroupItemClick(target)
+        {
+            $('.list-group-item').removeClass('active');
+            $(target).addClass('active');
+        }
+
+    </script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

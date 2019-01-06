@@ -216,6 +216,8 @@
     <Content Include="Content\images\intro-bg.jpg" />
     <Content Include="Content\images\JoyceArryTribFest.jpg" />
     <Content Include="Content\images\map-marker.png" />
+    <Content Include="Content\images\maps\Amdrin.png" />
+    <Content Include="Content\images\maps\BarrenWildlands.png" />
     <Content Include="Content\images\maps\Brusland_Mountains_Cities.jpg" />
     <Content Include="Content\images\maps\Brusland_Mountains_Landscape.jpg" />
     <Content Include="Content\images\maps\Brusland_Mountains_Nobles.jpg" />
@@ -258,10 +260,6 @@
     <Content Include="Areas\DungeonsAndDragons\Views\web.config" />
     <Content Include="Areas\DungeonsAndDragons\Views\DandD\Index.cshtml" />
     <Content Include="Areas\DungeonsAndDragons\Views\DandD\WorldMap.cshtml" />
-    <Content Include="Areas\DungeonsAndDragons\Views\DandD\_BruslandMountains.cshtml" />
-    <Content Include="Areas\DungeonsAndDragons\Views\DandD\_Ciendor.cshtml" />
-    <Content Include="Areas\DungeonsAndDragons\Views\DandD\_Iona.cshtml" />
-    <Content Include="Areas\DungeonsAndDragons\Views\DandD\_World.cshtml" />
     <Content Include="Areas\DungeonsAndDragons\Views\Shared\_DandDLayout.cshtml" />
     <Content Include="Areas\DungeonsAndDragons\Views\_ViewStart.cshtml" />
     <Content Include="Content\fontawesome\fonts\fontawesome-webfont.eot" />
@@ -270,9 +268,15 @@
     <Content Include="Content\fontawesome\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\fontawesome\fonts\FontAwesome.otf" />
     <Content Include="Content\files\CV-Arne.pdf" />
+    <Content Include="Areas\DungeonsAndDragons\Views\DandD\Iona.cshtml" />
+    <Content Include="Areas\DungeonsAndDragons\Views\DandD\Ciendor.cshtml" />
+    <Content Include="Areas\DungeonsAndDragons\Views\DandD\BruslandMountains.cshtml" />
+    <Content Include="Areas\DungeonsAndDragons\Views\DandD\Amdrin.cshtml" />
+    <Content Include="Areas\DungeonsAndDragons\Views\DandD\BarrenWildlands.cshtml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Properties\PublishProfiles\SmarterASP_FTP.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\imageMapResizer.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -281,6 +285,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.easing.1.3.js" />
+    <Content Include="Scripts\jquery.maphilight.js" />
+    <Content Include="Scripts\jquery.maphilight.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />

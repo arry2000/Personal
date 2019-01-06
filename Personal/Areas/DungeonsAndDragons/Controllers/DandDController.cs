@@ -18,28 +18,60 @@ namespace Personal.Areas.DungeonsAndDragons.Controllers
             return View();
         }
 
-        public PartialViewResult GetMaps(string region)
+        public ViewResult GetMap(string region)
         {
-            string partialViewName = "";
-            switch (region)
+            string viewName = string.Empty;
+            switch(region)
             {
-                case "WORLD":
-                    partialViewName = "_World";
-                    break;
                 case "IONA":
-                    partialViewName = "_Iona";
+                    viewName = "Iona";
                     break;
                 case "CIENDOR":
-                    partialViewName = "_Ciendor";
+                    viewName = "Ciendor";
                     break;
                 case "BRUSLAND MOUNTAINS":
-                    partialViewName = "_BruslandMountains";
+                    viewName = "BruslandMountains";
+                    break;
+                case "AMDRIN":
+                    viewName = "Amdrin";
+                    break;
+                case "BARREN WILDLANDS":
+                    viewName = "BarrenWildlands";
                     break;
                 default:
                     break;
             }
-
-            return PartialView(partialViewName);
+            return View(viewName);
         }
+
+        //public PartialViewResult GetMaps(string region)
+        //{
+        //    string partialViewName = "";
+        //    switch (region)
+        //    {
+        //        case "WORLD":
+        //            partialViewName = "_World";
+        //            break;
+        //        case "IONA":
+        //            partialViewName = "_Iona";
+        //            break;
+        //        case "CIENDOR":
+        //            partialViewName = "_Ciendor";
+        //            break;
+        //        case "BRUSLAND MOUNTAINS":
+        //            partialViewName = "_BruslandMountains";
+        //            break;
+        //        case "AMDRIN":
+        //            partialViewName = "_Amdrin";
+        //            break;
+        //        case "BARREN WILDLANDS":
+        //            partialViewName = "_BarrenWildlands";
+        //            break;
+        //        default:
+        //            break;
+        //    }
+
+        //    return PartialView(partialViewName);
+        //}
     }
 }
