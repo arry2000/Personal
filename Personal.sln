@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Personal", "Personal\Personal.csproj", "{A4DF3112-B9EE-426E-BA45-49A7D4278594}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swgoh.gg.Models", "Swgoh.gg.Models\Swgoh.gg.Models.csproj", "{CBBC0D86-DF0A-4579-8ED0-509DA8F3B151}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swgoh.gg.Helpers", "Swgoh.gg.Helpers\Swgoh.gg.Helpers.csproj", "{AE74563B-43F8-49F3-AA0B-CD03B0F53C9B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{A4DF3112-B9EE-426E-BA45-49A7D4278594}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4DF3112-B9EE-426E-BA45-49A7D4278594}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4DF3112-B9EE-426E-BA45-49A7D4278594}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBBC0D86-DF0A-4579-8ED0-509DA8F3B151}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBBC0D86-DF0A-4579-8ED0-509DA8F3B151}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBBC0D86-DF0A-4579-8ED0-509DA8F3B151}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBBC0D86-DF0A-4579-8ED0-509DA8F3B151}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE74563B-43F8-49F3-AA0B-CD03B0F53C9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE74563B-43F8-49F3-AA0B-CD03B0F53C9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE74563B-43F8-49F3-AA0B-CD03B0F53C9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE74563B-43F8-49F3-AA0B-CD03B0F53C9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Website for calling SWGoH.gg API">
+    <meta name="author" content="Arne Vanderstraeten">
+    <title>SWGoH.gg API Caller - @ViewBag.Title</title>
+    <link rel="icon" href="@Url.Content("~/favicon.ico")" />
+    @Styles.Render("~/Content/Swgohcss")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark body-content">
+        
+        <a class="navbar-brand" href="@Url.Action("Index","Swgoh", new { area = "Swgoh" })">
+            <i class="fas fa-jedi"></i> SWGoH.gg API Caller
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item @( ViewBag.Active == "Search" ? "active" : "" ) ">
+                    @Html.ActionLink("Search", "Index", "Swgoh", null, new { @class = "nav-link" })
+                </li>
+            </ul>
+            @*@Html.Partial("_LoginPartial")*@
+        </div>
+    </nav>
+
+    <div class="container-fluid body-content">
+        @RenderBody()
+
+    </div>
+
+    <nav class="navbar fixed-bottom navbar-expand-md navbar-dark bg-dark">
+        <span class="navbar-text mx-auto">
+            &copy; @DateTime.Now.Year - Arrys SWGoH.gg API caller
+        </span>
+    </nav>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script>
+
+        function listGroupItemClick(target)
+        {
+            $('.list-group-item').removeClass('active');
+            $(target).addClass('active');
+        }
+
+    </script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

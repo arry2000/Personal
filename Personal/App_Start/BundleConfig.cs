@@ -35,6 +35,11 @@ namespace Personal
                       "~/Content/bootstrap.min.css",
                       "~/Content/fontawesome/css/all.min.css",
                       "~/Content/DandDSite.css"));
+
+            bundles.Add(new StyleBundle("~/Content/Swgohcss").Include(
+                      "~/Content/bootstrap.min.css",
+                      "~/Content/fontawesome/css/all.min.css",
+                      "~/Content/Swgoh.css"));
         }
     }
 }

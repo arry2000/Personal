@@ -1,0 +1,14 @@
+﻿body {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.navbar-brand{
+    font-size:1.1rem;
+}

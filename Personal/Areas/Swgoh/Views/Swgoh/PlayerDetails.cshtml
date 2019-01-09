@@ -1,0 +1,242 @@
+﻿@model Swgoh.gg.Models.Player.Player
+
+@{
+    ViewBag.Title = "PlayerDetails";
+    ViewBag.Active = "Player";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h2>Player details: @Model.data.name <small>(Allycode: @Model.data.ally_code)</small></h2>
+        <hr />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4">
+        <dl class="row">
+            <dt class="col-6">
+                @Html.DisplayNameFor(model => model.data.last_updated)
+            </dt>
+
+            <dd class="col-6">
+                @Html.DisplayFor(model => model.data.last_updated)
+            </dd>
+
+            <dt class="col-6">
+                @Html.DisplayNameFor(model => model.data.level)
+            </dt>
+
+            <dd class="col-6">
+                @Html.DisplayFor(model => model.data.level)
+            </dd>
+
+            <dt class="col-6">
+                @Html.DisplayNameFor(model => model.data.galactic_power)
+            </dt>
+
+            <dd class="col-6">
+                @Html.DisplayFor(model => model.data.galactic_power)
+            </dd>
+
+            <dt class="col-6">
+                @Html.DisplayNameFor(model => model.data.character_galactic_power)
+            </dt>
+
+            <dd class="col-6">
+                @Html.DisplayFor(model => model.data.character_galactic_power)
+            </dd>
+
+            <dt class="col-6">
+                @Html.DisplayNameFor(model => model.data.ship_galactic_power)
+            </dt>
+
+            <dd class="col-6">
+                @Html.DisplayFor(model => model.data.ship_galactic_power)
+            </dd>
+
+            <dt class="col-6">
+                @Html.DisplayNameFor(model => model.data.pvp_battles_won)
+            </dt>
+
+            <dd class="col-6">
+                @Html.DisplayFor(model => model.data.pvp_battles_won)
+            </dd>
+
+            <dt class="col-6">
+                @Html.DisplayNameFor(model => model.data.pve_battles_won)
+            </dt>
+
+            <dd class="col-6">
+                @Html.DisplayFor(model => model.data.pve_battles_won)
+            </dd>
+
+            <dt class="col-6">
+                @Html.DisplayNameFor(model => model.data.pve_hard_won)
+            </dt>
+
+            <dd class="col-6">
+                @Html.DisplayFor(model => model.data.pve_hard_won)
+            </dd>
+
+            <dt class="col-6">
+                @Html.DisplayNameFor(model => model.data.galactic_war_won)
+            </dt>
+
+            <dd class="col-6">
+                @Html.DisplayFor(model => model.data.galactic_war_won)
+            </dd>
+
+            <dt class="col-6">
+                @Html.DisplayNameFor(model => model.data.ship_battles_won)
+            </dt>
+
+            <dd class="col-6">
+                @Html.DisplayFor(model => model.data.ship_battles_won)
+            </dd>
+
+            <dt class="col-6">
+                @Html.DisplayNameFor(model => model.data.guild_name)
+            </dt>
+
+            <dd class="col-6">
+                @Html.DisplayFor(model => model.data.guild_name)
+            </dd>
+
+            <dt class="col-6">
+                @Html.DisplayNameFor(model => model.data.guild_id)
+            </dt>
+
+            <dd class="col-6">
+                @Html.ActionLink(Model.data.guild_id.ToString(), "GuildDetails", "Swgoh", new { guildId = Model.data.guild_id }, null)
+            </dd>
+
+            <dt class="col-6">
+                @Html.DisplayNameFor(model => model.data.guild_contribution)
+            </dt>
+
+            <dd class="col-6">
+                @Html.DisplayFor(model => model.data.guild_contribution)
+            </dd>
+
+            <dt class="col-6">
+                @Html.DisplayNameFor(model => model.data.guild_exchange_donations)
+            </dt>
+
+            <dd class="col-6">
+                @Html.DisplayFor(model => model.data.guild_exchange_donations)
+            </dd>
+
+            <dt class="col-6">
+                @Html.DisplayNameFor(model => model.data.guild_raid_won)
+            </dt>
+
+            <dd class="col-6">
+                @Html.DisplayFor(model => model.data.guild_raid_won)
+            </dd>
+
+            <dt class="col-6">
+                @Html.DisplayNameFor(model => model.data.url)
+            </dt>
+
+            <dd class="col-6">
+                <a href="@Model.data.SwgohLink" target="_blank">@Model.data.SwgohLink</a>
+            </dd>
+
+        </dl>
+    </div>
+
+    <div class="col-4">
+        <h3>Arena</h3>
+        <dl class="row">
+            <dt class="col-6">
+                @Html.DisplayNameFor(model => model.data.arena.rank)
+            </dt>
+
+            <dd class="col-6">
+                @Html.DisplayFor(model => model.data.arena.rank)
+            </dd>
+        </dl>
+
+        <h4>@Html.DisplayNameFor(model => Model.data.ArenaMembers)</h4>
+        <table class="table table-sm table-hover table-striped">
+            <tr class="table-info">
+                <th>Image</th>
+                <th>Name</th>
+                <th>Leader</th>
+            </tr>
+            @foreach (var member in Model.data.ArenaMembers)
+            {
+                <tr>
+                    <td><img src="@member.image" alt="Arena member @member.name" title="Arena member @member.name" class="img-fluid" style="max-height: 3em;" /></td>
+                    <td class="align-middle">@member.name</td>
+                    <td class="align-middle">
+                        @if(member.Equals(Model.data.ArenaLeader))
+                        {
+                            <i class="fas fa-check"></i>
+                        }
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+
+    <div class="col-4">
+        <h3>Fleet arena</h3>
+        <dl class="row">
+            <dt class="col-6">
+                @Html.DisplayNameFor(model => model.data.fleet_arena.rank)
+            </dt>
+
+            <dd class="col-6">
+                @Html.DisplayFor(model => model.data.fleet_arena.rank)
+            </dd>
+
+        </dl>
+
+        <h4>@Html.DisplayNameFor(model => Model.data.FleetArenaMembers)</h4>
+        <table class="table table-sm table-hover table-striped">
+            <tr class="table-info">
+                <th>Image</th>
+                <th>Name</th>
+                <th>Leader</th>
+            </tr>
+            @foreach (var member in Model.data.FleetArenaMembers)
+            {
+                <tr>
+                    <td><img src="@member.image" alt="Arena member @member.name" title="Arena member @member.name" class="img-fluid" style="max-height: 3em;" /></td>
+                    <td class="align-middle">@member.name</td>
+                    <td class="align-middle">
+                        @if (member.Equals(Model.data.FleetArenaLeader))
+                        {
+                            <i class="fas fa-check"></i>
+                        }
+                    </td>
+                </tr>
+            }
+        </table>
+
+        <h4>@Html.DisplayNameFor(model => Model.data.FleetArenaReinforcements)</h4>
+        <table class="table table-sm table-hover table-striped">
+            <tr class="table-info">
+                <th>Image</th>
+                <th>Name</th>
+            </tr>
+            @foreach (var member in Model.data.FleetArenaReinforcements)
+            {
+                <tr>
+                    <td><img src="@member.image" alt="Arena member @member.name" title="Arena member @member.name" class="img-fluid" style="max-height: 3em;" /></td>
+                    <td class="align-middle">@member.name</td>
+                </tr>
+            }
+        </table>
+    </div>
+
+</div>
+
+
+<div class="row">
+    <div class="col-12">
+        @Html.ActionLink("Back", "Index", null, new { @class = "btn btn-warning" })
+    </div>
+</div>

@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    ViewBag.Active = "Search";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h2>SWGOH.gg Api calls</h2>
+        <hr />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6">
+
+        <h3>Search for a player</h3>
+
+        @using (Html.BeginForm("PlayerDetails", "Swgoh", FormMethod.Get, null))
+        {
+            <div class="form-group">
+                <label for="allyCode">Ally code</label>
+                @Html.TextBox("allyCode", null, new { @class = "form-control" })
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        }
+
+        <h3>Search for a guild</h3>
+
+        @using (Html.BeginForm("GuildDetails", "Swgoh", FormMethod.Get, null))
+        {
+            <div class="form-group">
+                <label for="guildId">Guild ID</label>
+                @Html.TextBox("guildId", null, new { @class = "form-control" })
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        }
+
+    </div>
+</div>

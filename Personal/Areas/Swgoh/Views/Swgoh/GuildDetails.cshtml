@@ -1,0 +1,78 @@
+﻿@model Swgoh.gg.Models.Guild.Guild
+
+@{
+    ViewBag.Title = "GuildDetails";
+    ViewBag.Active = "Guild";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h2>Guild details: @Model.data.name <small>(ID: @Model.data.id)</small></h2>
+        <hr />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4">
+        <dl class="row">
+            <dt class="col-6">
+                @Html.DisplayNameFor(model => model.data.galactic_power)
+            </dt>
+
+            <dd class="col-6">
+                @Html.DisplayFor(model => model.data.galactic_power)
+            </dd>
+            <dt class="col-6">
+                @Html.DisplayNameFor(model => model.data.member_count)
+            </dt>
+
+            <dd class="col-6">
+                @Html.DisplayFor(model => model.data.member_count)
+            </dd>
+            <dt class="col-6">
+                @Html.DisplayNameFor(model => model.data.profile_count)
+            </dt>
+
+            <dd class="col-6">
+                @Html.DisplayFor(model => model.data.profile_count)
+            </dd>
+            <dt class="col-6">
+                @Html.DisplayNameFor(model => model.data.rank)
+            </dt>
+            <dd class="col-6">
+                @Html.DisplayFor(model => model.data.rank)
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <h3>@Html.DisplayNameFor(model => model.players)</h3>
+        <table class="table table-sm table-hover table-striped">
+            <tr class="table-info">
+                <th>@Html.DisplayNameFor(model => model.players.First().data.name)</th>
+                <th>@Html.DisplayNameFor(model => model.players.First().data.level)</th>
+                <th>@Html.DisplayNameFor(model => model.players.First().data.galactic_power)</th>
+                <th>Actions</th>
+            </tr>
+            @foreach (Swgoh.gg.Models.Guild.GuildPlayer player in Model.players.OrderBy(p => p.data.name))
+            {
+                <tr>
+                    <td>@Html.DisplayFor(model => player.data.name)</td>
+                    <td>@Html.DisplayFor(model => player.data.level)</td>
+                    <td>@Html.DisplayFor(model => player.data.galactic_power)</td>
+                    <td>
+                        @Html.ActionLink(" ", "PlayerDetails", new { allyCode = player.data.ally_code }, new { @class = "fa fa-eye", title = "Get player details" })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        @Html.ActionLink("Back", "Index", null, new { @class = "btn btn-warning" })
+    </div>
+</div>

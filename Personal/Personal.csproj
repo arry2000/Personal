@@ -170,7 +170,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Code\CustomHtmlHelpers.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -178,6 +177,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\DungeonsAndDragons\Controllers\DandDController.cs" />
     <Compile Include="Areas\DungeonsAndDragons\DungeonsAndDragonsAreaRegistration.cs" />
+    <Compile Include="Areas\Swgoh\SwgohAreaRegistration.cs" />
+    <Compile Include="Areas\Swgoh\Controllers\SwgohController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -197,6 +198,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Swgoh.css" />
     <Content Include="Content\fontawesome\css\all.css" />
     <Content Include="Content\fontawesome\css\all.min.css" />
     <Content Include="Content\fontawesome\webfonts\fa-brands-400.svg" />
@@ -283,6 +285,12 @@
     <Content Include="Content\fontawesome\webfonts\fa-solid-900.ttf" />
     <Content Include="Content\fontawesome\webfonts\fa-solid-900.woff" />
     <Content Include="Content\fontawesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="Areas\Swgoh\Views\web.config" />
+    <Content Include="Areas\Swgoh\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Swgoh\Views\Shared\_SwgohLayout.cshtml" />
+    <Content Include="Areas\Swgoh\Views\Swgoh\Index.cshtml" />
+    <Content Include="Areas\Swgoh\Views\Swgoh\PlayerDetails.cshtml" />
+    <Content Include="Areas\Swgoh\Views\Swgoh\GuildDetails.cshtml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Properties\PublishProfiles\SmarterASP_FTP.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -364,8 +372,10 @@
     <Content Include="Views\Home\HappyBirthday.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
     <Folder Include="Areas\DungeonsAndDragons\Models\" />
+    <Folder Include="Areas\Swgoh\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -376,6 +386,16 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Swgoh.gg.Helpers\Swgoh.gg.Helpers.csproj">
+      <Project>{AE74563B-43F8-49F3-AA0B-CD03B0F53C9B}</Project>
+      <Name>Swgoh.gg.Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Swgoh.gg.Models\Swgoh.gg.Models.csproj">
+      <Project>{CBBC0D86-DF0A-4579-8ED0-509DA8F3B151}</Project>
+      <Name>Swgoh.gg.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
