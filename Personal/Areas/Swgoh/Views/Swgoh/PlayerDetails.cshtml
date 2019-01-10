@@ -164,6 +164,7 @@
                 <th>Image</th>
                 <th>Name</th>
                 <th>Level</th>
+                <th>Power</th>
                 <th>Leader</th>
             </tr>
             @foreach (var member in Model.data.ArenaMembers)
@@ -172,6 +173,7 @@
                     <td><img src="@member.image" alt="@member.name" title="Arena member @member.name" class="img-fluid" style="max-height: 3em;" /></td>
                     <td class="align-middle">@member.name</td>
                     <td class="align-middle">@member.Level</td>
+                    <td class="align-middle">@member.UnitPower</td>
                     <td class="align-middle">
                         @if(member.Equals(Model.data.ArenaLeader))
                         {
@@ -202,6 +204,7 @@
                 <th>Image</th>
                 <th>Name</th>
                 <th>Level</th>
+                <th>Power</th>
                 <th>Leader</th>
             </tr>
             @foreach (var member in Model.data.FleetArenaMembers)
@@ -210,6 +213,7 @@
                     <td><img src="@member.image" alt="@member.name" title="Arena member @member.name" class="img-fluid" style="max-height: 3em;" /></td>
                     <td class="align-middle">@member.name</td>
                     <td class="align-middle">@member.Level</td>
+                    <td class="align-middle">@member.UnitPower</td>
                     <td class="align-middle">
                         @if (member.Equals(Model.data.FleetArenaLeader))
                         {
@@ -226,6 +230,7 @@
                 <th>Image</th>
                 <th>Name</th>
                 <th>Level</th>
+                <th>Power</th>
             </tr>
             @foreach (var member in Model.data.FleetArenaReinforcements)
             {
@@ -233,6 +238,7 @@
                     <td><img src="@member.image" alt="@member.name" title="Arena member @member.name" class="img-fluid" style="max-height: 3em;" /></td>
                     <td class="align-middle">@member.name</td>
                     <td class="align-middle">@member.Level</td>
+                    <td class="align-middle">@member.UnitPower</td>
                 </tr>
             }
         </table>

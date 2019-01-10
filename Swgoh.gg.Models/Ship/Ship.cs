@@ -52,5 +52,6 @@ namespace Swgoh.gg.Models.Ship
         public bool capital_ship { get; set; }
 
         public int Level { get; set; }
+        public int UnitPower { get; set; }
     }
 }

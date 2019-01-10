@@ -34,19 +34,25 @@ namespace Personal.Areas.Swgoh.Controllers
             foreach(string member in player.data.arena.members)
             {
                 Character toAdd = await this.GetCharacterByBaseId(member);
-                toAdd.Level = player.GetUnitByBaseId(toAdd.base_id).data.level;
+                Unit unit = player.GetUnitByBaseId(toAdd.base_id);
+                toAdd.Level = unit.data.level;
+                toAdd.UnitPower = unit.data.power;
                 player.data.ArenaMembers.Add(toAdd);
             }
             foreach(string ship in player.data.fleet_arena.members)
             {
                 Ship toAdd = await this.GetShipByBaseId(ship);
-                toAdd.Level = player.GetUnitByBaseId(toAdd.base_id).data.level;
+                Unit unit = player.GetUnitByBaseId(toAdd.base_id);
+                toAdd.Level = unit.data.level;
+                toAdd.UnitPower = unit.data.power;
                 player.data.FleetArenaMembers.Add(toAdd);
             }
             foreach(string ship in player.data.fleet_arena.reinforcements)
             {
                 Ship toAdd = await this.GetShipByBaseId(ship);
-                toAdd.Level = player.GetUnitByBaseId(toAdd.base_id).data.level;
+                Unit unit = player.GetUnitByBaseId(toAdd.base_id);
+                toAdd.Level = unit.data.level;
+                toAdd.UnitPower = unit.data.power;
                 player.data.FleetArenaReinforcements.Add(toAdd);
             }
 
@@ -77,5 +83,6 @@ namespace Personal.Areas.Swgoh.Controllers
 
         //TODO: Player details for a character ==> Unit data
         //Same thing for ships ==> Unit data
+        //So ViewModel is almost like the Unit ... but also has an image?
     }
 }

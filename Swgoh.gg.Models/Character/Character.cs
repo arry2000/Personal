@@ -59,5 +59,6 @@ namespace Swgoh.gg.Models.Character
         public int activate_shard_count { get; set; }
 
         public int Level { get; set; }
+        public int UnitPower { get; set; }
     }
 }
