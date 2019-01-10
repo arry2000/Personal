@@ -57,5 +57,7 @@ namespace Swgoh.gg.Models.Character
         public object ship_slot { get; set; }
         [Display(Name = "# Shards to activate")]
         public int activate_shard_count { get; set; }
+
+        public int Level { get; set; }
     }
 }

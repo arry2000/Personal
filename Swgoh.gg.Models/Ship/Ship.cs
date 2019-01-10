@@ -50,5 +50,7 @@ namespace Swgoh.gg.Models.Ship
         public string role { get; set; }
         [Display(Name = "Capital ship")]
         public bool capital_ship { get; set; }
+
+        public int Level { get; set; }
     }
 }

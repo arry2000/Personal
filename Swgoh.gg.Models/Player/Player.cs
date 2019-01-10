@@ -13,5 +13,10 @@ namespace Swgoh.gg.Models.Player
         public List<Unit> units { get; set; }
         [Display(Name = "Data")]
         public PlayerData data { get; set; }
+
+        public Unit GetUnitByBaseId(string baseId)
+        {
+            return this.units.Where(u => u.data.base_id.Equals(baseId)).SingleOrDefault();
+        }
     }
 }

@@ -163,13 +163,15 @@
             <tr class="table-info">
                 <th>Image</th>
                 <th>Name</th>
+                <th>Level</th>
                 <th>Leader</th>
             </tr>
             @foreach (var member in Model.data.ArenaMembers)
             {
                 <tr>
-                    <td><img src="@member.image" alt="Arena member @member.name" title="Arena member @member.name" class="img-fluid" style="max-height: 3em;" /></td>
+                    <td><img src="@member.image" alt="@member.name" title="Arena member @member.name" class="img-fluid" style="max-height: 3em;" /></td>
                     <td class="align-middle">@member.name</td>
+                    <td class="align-middle">@member.Level</td>
                     <td class="align-middle">
                         @if(member.Equals(Model.data.ArenaLeader))
                         {
@@ -199,13 +201,15 @@
             <tr class="table-info">
                 <th>Image</th>
                 <th>Name</th>
+                <th>Level</th>
                 <th>Leader</th>
             </tr>
             @foreach (var member in Model.data.FleetArenaMembers)
             {
                 <tr>
-                    <td><img src="@member.image" alt="Arena member @member.name" title="Arena member @member.name" class="img-fluid" style="max-height: 3em;" /></td>
+                    <td><img src="@member.image" alt="@member.name" title="Arena member @member.name" class="img-fluid" style="max-height: 3em;" /></td>
                     <td class="align-middle">@member.name</td>
+                    <td class="align-middle">@member.Level</td>
                     <td class="align-middle">
                         @if (member.Equals(Model.data.FleetArenaLeader))
                         {
@@ -221,12 +225,14 @@
             <tr class="table-info">
                 <th>Image</th>
                 <th>Name</th>
+                <th>Level</th>
             </tr>
             @foreach (var member in Model.data.FleetArenaReinforcements)
             {
                 <tr>
-                    <td><img src="@member.image" alt="Arena member @member.name" title="Arena member @member.name" class="img-fluid" style="max-height: 3em;" /></td>
+                    <td><img src="@member.image" alt="@member.name" title="Arena member @member.name" class="img-fluid" style="max-height: 3em;" /></td>
                     <td class="align-middle">@member.name</td>
+                    <td class="align-middle">@member.Level</td>
                 </tr>
             }
         </table>

@@ -33,15 +33,21 @@ namespace Personal.Areas.Swgoh.Controllers
             player.data.FleetArenaLeader = await this.GetShipByBaseId(player.data.fleet_arena.leader);
             foreach(string member in player.data.arena.members)
             {
-                player.data.ArenaMembers.Add(await this.GetCharacterByBaseId(member));
+                Character toAdd = await this.GetCharacterByBaseId(member);
+                toAdd.Level = player.GetUnitByBaseId(toAdd.base_id).data.level;
+                player.data.ArenaMembers.Add(toAdd);
             }
             foreach(string ship in player.data.fleet_arena.members)
             {
-                player.data.FleetArenaMembers.Add(await this.GetShipByBaseId(ship));
+                Ship toAdd = await this.GetShipByBaseId(ship);
+                toAdd.Level = player.GetUnitByBaseId(toAdd.base_id).data.level;
+                player.data.FleetArenaMembers.Add(toAdd);
             }
             foreach(string ship in player.data.fleet_arena.reinforcements)
             {
-                player.data.FleetArenaReinforcements.Add(await this.GetShipByBaseId(ship));
+                Ship toAdd = await this.GetShipByBaseId(ship);
+                toAdd.Level = player.GetUnitByBaseId(toAdd.base_id).data.level;
+                player.data.FleetArenaReinforcements.Add(toAdd);
             }
 
             return View(player);
@@ -69,8 +75,7 @@ namespace Personal.Areas.Swgoh.Controllers
             return shipList.Where(s => s.base_id == baseId).FirstOrDefault();
         }
 
-        //TODO: Make (class library of) ViewModels
-        //Gather Models and Create ViewModels (for example: PlayerCharacter == Player.unit data + some character data (name, image ...)
-        //Same thing for ships
+        //TODO: Player details for a character ==> Unit data
+        //Same thing for ships ==> Unit data
     }
 }
